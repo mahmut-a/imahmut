@@ -1,18 +1,34 @@
 ---
-import siteConfig from '../data/site-config';
+import Container from "@components/Container.astro";
+import Link from "@components/Link.astro";
+import { SITE } from "@consts";
 ---
 
-<header class="w-full max-w-3xl mx-auto mb-12 sm:mb-16">
-    {
-        siteConfig.logo && siteConfig.logo?.src ? (
-            <a href="/cengizhoca/">
-                <img src={siteConfig.logo.src} alt={siteConfig.logo.alt || ''} class="max-h-12" />
-            </a>
-        ) : (
-            <a class="font-serif text-2xl leading-tight font-medium text-theme-foreground sm:text-4xl" href="/">
-                {siteConfig.title}
-            </a>
-        )
-    }
-    {siteConfig.subtitle && <p class="text-sm leading-tight mt-1">{siteConfig.subtitle}</p>}
+<header>
+  <Container>
+    <div class="flex flex-wrap gap-y-2 justify-between">
+      <Link href="/" underline={false}>
+        <div class="font-semibold">
+          {SITE.NAME}
+        </div>
+      </Link>
+      <nav class="flex gap-1">
+        <Link href="/blog">
+          blog
+        </Link>
+        <span>
+          {`/`}
+        </span>
+        <Link href="/work">
+          work
+        </Link>
+        <span>
+          {`/`}
+        </span>
+        <Link href="/projects">
+          projects
+        </Link>
+      </nav>
+    </div>
+  </Container>
 </header>
