@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://imahmut.com/sitemap-index.xml
