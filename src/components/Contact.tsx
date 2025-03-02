@@ -128,7 +128,7 @@ const Contact = () => {
                     href="tel:+905551234567" 
                     className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors"
                   >
-                    +90 (555) 123 45 67
+                    +90 (501) 299 84 92
                   </a>
                 </div>
               </div>

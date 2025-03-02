@@ -1,6 +1,6 @@
 ---
 title: 'Yapay Zeka ve Web Geliştirme: Geleceğin Teknolojileri'
-date: '2023-08-22'
+date: '2024-08-22'
 excerpt: 'Yapay zeka teknolojilerinin web geliştirme süreçlerine nasıl entegre edildiği ve gelecekte bizi nelerin beklediği hakkında bir inceleme.'
 tags: ['Yapay Zeka', 'Web Geliştirme', 'AI', 'Teknoloji Trendleri']
 ---

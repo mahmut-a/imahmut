@@ -1,13 +1,13 @@
 ---
-title: '2023 Web Geliştirme Trendleri'
-date: '2023-06-15'
-excerpt: '2023 yılında web geliştirme dünyasında öne çıkan trendler ve teknolojiler hakkında kapsamlı bir inceleme.'
+title: '2024 Web Geliştirme Trendleri'
+date: '2024-06-15'
+excerpt: '2024 yılında web geliştirme dünyasında öne çıkan trendler ve teknolojiler hakkında kapsamlı bir inceleme.'
 tags: ['Web Geliştirme', 'Frontend', 'Backend', 'Teknoloji']
 ---
 
-# 2023 Web Geliştirme Trendleri
+# 2024 Web Geliştirme Trendleri
 
-Web geliştirme dünyası sürekli olarak evrim geçiriyor ve yeni teknolojiler, araçlar ve yaklaşımlar ortaya çıkıyor. 2023 yılında web geliştirme alanında öne çıkan bazı trendleri ve teknolojileri inceleyeceğiz.
+Web geliştirme dünyası sürekli olarak evrim geçiriyor ve yeni teknolojiler, araçlar ve yaklaşımlar ortaya çıkıyor. 2024 yılında web geliştirme alanında öne çıkan bazı trendleri ve teknolojileri inceleyeceğiz.
 
 ## 1. Jamstack Mimarisi
 

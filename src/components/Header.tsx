@@ -77,7 +77,7 @@ const Header = () => {
             >
               Ana Sayfa
             </Link>
-            {createAnchorLink('#hizmetler', 'Hizmetler')}
+            {createAnchorLink('#hizmetler', 'Çalışmalarım')}
             {createAnchorLink('#hakkimda', 'Hakkımda')}
             <Link 
               href="/blog" 
@@ -124,7 +124,7 @@ const Header = () => {
                     className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md transition-colors"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    Hizmetler
+                    Çalışmalarım
                   </a>
                 ) : (
                   <Link 
@@ -132,7 +132,7 @@ const Header = () => {
                     className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md transition-colors"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    Hizmetler
+                    Çalışmalarım
                   </Link>
                 )}
               </li>

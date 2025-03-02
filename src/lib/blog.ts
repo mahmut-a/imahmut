@@ -15,37 +15,36 @@ export type Post = {
   tags?: string[]
 }
 
-export async function getAllPosts(): Promise<Post[]> {
+export function getAllPosts(): Post[] {
   // content/blog klasörü yoksa boş dizi döndür
   if (!fs.existsSync(postsDirectory)) {
     return []
   }
 
   const fileNames = fs.readdirSync(postsDirectory)
-  const allPostsData = await Promise.all(
-    fileNames
-      .filter(fileName => fileName.endsWith('.md'))
-      .map(async fileName => {
-        const slug = fileName.replace(/\.md$/, '')
-        const fullPath = path.join(postsDirectory, fileName)
-        const fileContents = fs.readFileSync(fullPath, 'utf8')
-        const matterResult = matter(fileContents)
+  const allPostsData = fileNames
+    .filter(fileName => fileName.endsWith('.md'))
+    .map(fileName => {
+      const slug = fileName.replace(/\.md$/, '')
+      const fullPath = path.join(postsDirectory, fileName)
+      const fileContents = fs.readFileSync(fullPath, 'utf8')
+      const matterResult = matter(fileContents)
 
-        const processedContent = await remark()
-          .use(html)
-          .process(matterResult.content)
-        const content = processedContent.toString()
+      // Markdown içeriğini HTML'e dönüştür
+      const processedContent = remark()
+        .use(html)
+        .processSync(matterResult.content)
+      const content = processedContent.toString()
 
-        return {
-          slug,
-          title: matterResult.data.title || 'Başlıksız Yazı',
-          date: matterResult.data.date || new Date().toISOString(),
-          excerpt: matterResult.data.excerpt || '',
-          content,
-          tags: matterResult.data.tags || [],
-        }
-      })
-  )
+      return {
+        slug,
+        title: matterResult.data.title || 'Başlıksız Yazı',
+        date: matterResult.data.date || new Date().toISOString(),
+        excerpt: matterResult.data.excerpt || '',
+        content,
+        tags: matterResult.data.tags || [],
+      }
+    })
 
   // Tarihe göre sırala (en yeni en üstte)
   return allPostsData.sort((a, b) => {
@@ -57,7 +56,7 @@ export async function getAllPosts(): Promise<Post[]> {
   })
 }
 
-export async function getPostBySlug(slug: string): Promise<Post | null> {
+export function getPostBySlug(slug: string): Post | null {
   try {
     // content/blog klasörü yoksa null döndür
     if (!fs.existsSync(postsDirectory)) {
@@ -74,9 +73,10 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
     const fileContents = fs.readFileSync(fullPath, 'utf8')
     const matterResult = matter(fileContents)
 
-    const processedContent = await remark()
+    // Markdown içeriğini HTML'e dönüştür
+    const processedContent = remark()
       .use(html)
-      .process(matterResult.content)
+      .processSync(matterResult.content)
     const content = processedContent.toString()
 
     return {

@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { FiGithub, FiLinkedin, FiTwitter, FiMail } from 'react-icons/fi'
+import { FiGithub, FiLinkedin, FiTwitter, FiMail , FiCodepen} from 'react-icons/fi'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -21,7 +21,7 @@ const Footer = () => {
 
           <div className="flex space-x-4 mb-4 md:mb-0">
             <a 
-              href="https://github.com/" 
+              href="https://github.com/mahmut-a" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors"
@@ -30,7 +30,7 @@ const Footer = () => {
               <FiGithub className="w-5 h-5" />
             </a>
             <a 
-              href="https://linkedin.com/" 
+              href="https://linkedin.com/mahmut-a" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors"
@@ -39,7 +39,7 @@ const Footer = () => {
               <FiLinkedin className="w-5 h-5" />
             </a>
             <a 
-              href="https://twitter.com/" 
+              href="https://twitter.com/yunusclk2025" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors"
@@ -48,11 +48,20 @@ const Footer = () => {
               <FiTwitter className="w-5 h-5" />
             </a>
             <a 
-              href="mailto:info@example.com" 
+              href="mailto:imahmut@proton.me" 
               className="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors"
               aria-label="E-posta"
             >
               <FiMail className="w-5 h-5" />
+            </a>
+            <a 
+              href="https://codepen.io/Odumam" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors"
+              aria-label="CodePen"
+            >
+              <FiCodepen className="w-5 h-5" />
             </a>
           </div>
         </div>
