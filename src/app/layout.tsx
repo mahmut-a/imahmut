@@ -38,7 +38,8 @@ export default function RootLayout({
           `}
         </Script>
 
-        // Vercel
+        {/* Vercel */}
+        
         <Analytics />
         <SpeedInsights />
       </head>

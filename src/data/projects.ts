@@ -2,11 +2,12 @@ import { FiCode, FiShoppingCart, FiSearch, FiServer, FiCpu, FiBarChart } from 'r
 import { SiShopify } from 'react-icons/si'
 
 export type Project = {
-  id: number
+  id: string
   title: string
   description: string
   technologies: string[]
   link?: string
+  completionPercentage: number
 }
 
 export type Service = {
@@ -17,105 +18,123 @@ export type Service = {
   projects: Project[]
 }
 
+// Proje kategorileri için tip tanımı
+export type ProjectCategories = {
+  webDev: Project[];
+  ecommerce: Project[];
+  seo: Project[];
+  backend: Project[];
+  ai: Project[];
+  consulting: Project[];
+}
+
 // Proje verileri
-export const projects = {
+export const projects: ProjectCategories = {
   webDev: [
     {
-      id: 1,
+      id: 'e-commerce-platform',
       title: 'E-Ticaret Web Sitesi',
       description: 'Modern ve kullanıcı dostu bir e-ticaret platformu geliştirdim.',
       technologies: ['React', 'Next.js', 'Tailwind CSS', 'Stripe'],
-      link: 'https://ecommerce-demo.mahmut.dev'
+      completionPercentage: 75
     },
     {
-      id: 2,
+      id: 'corporate-website',
       title: 'Kurumsal Web Sitesi',
       description: 'SEO odaklı, hızlı ve duyarlı bir kurumsal web sitesi tasarladım.',
       technologies: ['HTML/CSS', 'JavaScript', 'PHP'],
-      link: 'https://corporate-demo.mahmut.dev'
+      completionPercentage: 60
     }
   ],
   ecommerce: [
     {
-      id: 1,
+      id: 'shopify-optimization',
       title: 'Shopify Mağaza Optimizasyonu',
       description: 'Mevcut bir Shopify mağazasını optimize ederek satışları %30 artırdım.',
       technologies: ['Shopify', 'Liquid', 'JavaScript'],
-      link: 'https://shopify-demo.mahmut.dev'
+      completionPercentage: 90
     },
     {
-      id: 2,
+      id: 'woocommerce-integration',
       title: 'WooCommerce Entegrasyonu',
       description: 'WordPress tabanlı bir siteye WooCommerce entegrasyonu yaparak e-ticaret özelliği ekledim.',
       technologies: ['WordPress', 'WooCommerce', 'PHP'],
-      link: 'https://woocommerce-demo.mahmut.dev'
-    },
+      completionPercentage: 40
+    }
   ],
   seo: [
     {
-      id: 1,
+      id: 'seo-optimization',
       title: 'SEO Optimizasyonu',
       description: 'Bir web sitesinin arama motoru sıralamasını iyileştirerek organik trafiği %50 artırdım.',
       technologies: ['Google Analytics', 'SEO', 'İçerik Stratejisi'],
-      link: 'https://seo-case.mahmut.dev'
+      completionPercentage: 85
     },
     {
-      id: 2,
+      id: 'digital-marketing',
       title: 'Dijital Pazarlama Kampanyası',
       description: 'Kapsamlı bir dijital pazarlama kampanyası ile marka bilinirliğini artırdım.',
       technologies: ['Google Ads', 'Facebook Ads', 'E-posta Pazarlama'],
-      link: 'https://marketing-case.mahmut.dev'
+      completionPercentage: 30
     }
   ],
   backend: [
     {
-      id: 1,
+      id: 'api-development',
       title: 'API Geliştirme',
       description: 'Yüksek performanslı ve ölçeklenebilir RESTful API hizmetleri geliştirdim.',
       technologies: ['Node.js', 'Express', 'MongoDB', 'Docker'],
-      link: 'https://api-demo.mahmut.dev'
+      completionPercentage: 65
     },
     {
-      id: 2,
+      id: 'database-optimization',
       title: 'Veritabanı Optimizasyonu',
       description: 'Karmaşık veritabanı yapılarını optimize ederek sistem performansını artırdım.',
       technologies: ['SQL', 'NoSQL', 'Veritabanı Tasarımı'],
-      link: 'https://db-case.mahmut.dev'
+      completionPercentage: 50
     }
   ],
   ai: [
     {
-      id: 1,
+      id: 'ai-chatbot',
       title: 'AI Chatbot Entegrasyonu',
       description: 'Müşteri hizmetleri için yapay zeka destekli chatbot çözümü geliştirdim.',
       technologies: ['Python', 'NLP', 'Machine Learning', 'API Entegrasyonu'],
-      link: 'https://ai-chatbot.mahmut.dev'
+      completionPercentage: 70
     },
     {
-      id: 2,
+      id: 'data-analysis',
       title: 'Veri Analizi Platformu',
       description: 'İşletme verilerini analiz eden ve öngörüler sunan bir platform geliştirdim.',
       technologies: ['Python', 'TensorFlow', 'Data Visualization'],
-      link: 'https://data-analytics.mahmut.dev'
+      completionPercentage: 45
     }
   ],
   consulting: [
     {
-      id: 1,
+      id: 'it-infrastructure',
       title: 'IT Altyapı Danışmanlığı',
       description: 'Bir işletmenin IT altyapısını modernize ederek operasyonel verimliliği artırdım.',
       technologies: ['Sistem Mimarisi', 'Cloud Computing', 'Güvenlik'],
-      link: 'https://it-consulting.mahmut.dev'
+      completionPercentage: 95
     },
     {
-      id: 2,
+      id: 'digital-transformation',
       title: 'Dijital Dönüşüm Stratejisi',
       description: 'Bir şirketin dijital dönüşüm yol haritasını oluşturarak rekabet avantajı sağladım.',
       technologies: ['Dijital Strateji', 'İş Süreçleri', 'Teknoloji Entegrasyonu'],
-      link: 'https://digital-transformation.mahmut.dev'
+      completionPercentage: 80
     }
   ]
 }
+
+// Her projeye link ekle
+Object.keys(projects).forEach((category) => {
+  const typedCategory = category as keyof ProjectCategories;
+  projects[typedCategory].forEach((project) => {
+    project.link = `/yapim-asamasinda/${project.id}`;
+  });
+});
 
 // Servis verileri
 export const services: Service[] = [
@@ -161,4 +180,14 @@ export const services: Service[] = [
     icon: FiBarChart,
     projects: projects.consulting
   }
-] 
+]
+
+// Tüm projeleri düz bir dizi olarak al
+export function getAllProjectsFlat(): Project[] {
+  return Object.values(projects).flat();
+}
+
+// ID'ye göre proje getir
+export function getProjectById(id: string): Project | undefined {
+  return getAllProjectsFlat().find(project => project.id === id);
+}

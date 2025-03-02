@@ -72,21 +72,34 @@ const ServiceModal = ({ isOpen, onClose, service }: ServiceModalProps) => {
                           <h5 className="text-lg font-bold text-gray-900 dark:text-white">
                             {project.title}
                           </h5>
-                          {project.link && (
-                            <a 
-                              href={project.link} 
-                              target="_blank" 
-                              rel="noopener noreferrer"
-                              className="text-primary hover:text-primary-dark transition-colors"
-                              aria-label={`${project.title} projesini görüntüle`}
-                            >
-                              <FiExternalLink className="h-5 w-5" />
-                            </a>
-                          )}
+                          <a 
+                            href={project.link || '/yapim-asamasinda'} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="text-primary hover:text-primary-dark transition-colors"
+                            aria-label={`${project.title} projesini görüntüle`}
+                          >
+                            <FiExternalLink className="h-5 w-5" />
+                          </a>
                         </div>
                         <p className="text-gray-600 dark:text-gray-300 mb-4">
                           {project.description}
                         </p>
+                        
+                        {/* Tamamlanma Yüzdesi */}
+                        <div className="mb-4">
+                          <div className="flex justify-between text-xs mb-1">
+                            <span className="text-gray-600 dark:text-gray-300">Tamamlanma</span>
+                            <span className="text-gray-800 dark:text-gray-200 font-medium">%{project.completionPercentage}</span>
+                          </div>
+                          <div className="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2">
+                            <div 
+                              className="bg-primary h-2 rounded-full" 
+                              style={{ width: `${project.completionPercentage}%` }}
+                            ></div>
+                          </div>
+                        </div>
+                        
                         <div className="flex flex-wrap gap-2">
                           {project.technologies.map((tech, index) => (
                             <span 
