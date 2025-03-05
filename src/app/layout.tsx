@@ -39,7 +39,23 @@ export default function RootLayout({
         </Script>
 
 
+        <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=G-J4B30DK565`}
+        ></script>
+        <script
+        dangerouslySetInnerHTML={{
+          __html: `
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+                    gtag('config', 'G-J4B30DK565');
+          `,
+        }}
+      ></script>
+
         {/* Google tag (gtag.js) */}
+        {/* 
 
         <Script>
           {`
@@ -52,8 +68,9 @@ export default function RootLayout({
 
               gtag('config', 'G-J4B30DK565');
             </script>
+            
           `}
-        </Script>
+        </Script> */}
 
         {/* Vercel */}
         
