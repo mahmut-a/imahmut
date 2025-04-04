@@ -1,8 +1,8 @@
 ## Özellikler
 
 - Modern ve minimalist tasarım
-- Responsive (mobil uyumlu) arayüz
-- Koyu/açık tema desteği
+- Responsive arayüz
+- Koyu/açık tema
 - Animasyonlu bileşenler
 - İletişim formu
 
