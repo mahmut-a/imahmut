@@ -125,7 +125,7 @@ const Contact = () => {
                 <div>
                   <h3 className="text-lg font-bold mb-2">Telefon</h3>
                   <a 
-                    href="tel:+905551234567" 
+                    href="tel:+905012998492" 
                     className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors"
                   >
                     +90 (501) 299 84 92
